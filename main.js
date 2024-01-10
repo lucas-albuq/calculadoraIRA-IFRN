@@ -38,10 +38,12 @@ function atualizarListaDisciplinas() {
 
     disciplinas.forEach((disciplina, index) => {
         const disciplinaDiv = document.createElement('div');
-        disciplinaDiv.innerHTML = `<strong>${disciplina.nome}</strong> - Carga Horária: ${disciplina.cargaHoraria}h, Média: ${disciplina.media}
+        disciplinaDiv.innerHTML = `<p><strong>${disciplina.nome}</strong> - Carga Horária: ${disciplina.cargaHoraria} aulas, Média: ${disciplina.media}</p>
+            <div>
             <button onclick="editarDisciplina(${index})">Editar</button>
-            <button onclick="excluirDisciplina(${index})">Excluir</button>`;
-
+            <button onclick="excluirDisciplina(${index})">Excluir</button>
+            </div>`;
+        disciplinaDiv.classList.add('disciplinaDiv')
         listaDisciplinas.appendChild(disciplinaDiv);
     });
 }
